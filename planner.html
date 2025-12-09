@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>EDUHUB | Study Planner</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav>
+    <div class="nav-inner">
+      <div class="logo">
+        <div class="logo-dot"></div>
+        EDUHUB
+        <span>Study. Share. Grow.</span>
+      </div>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="planner.html" class="active">Planner</a></li>
+        <li><a href="notes.html">Notes</a></li>
+        <li><a href="profile.html">Profile</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="page-wrap">
+    <section class="hero">
+      <div class="card card-soft">
+        <h1 class="hero-title gradient-text">Study Planner</h1>
+        <p class="hero-sub">
+          Organize your subjects and topics, set a date, and track what is done or pending.
+        </p>
+        <p class="hero-sub">
+          Pro tip: keep tasks small, like “Read 5 pages of Chapter 2” instead of “Finish Chapter 2”.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Why planning helps?</h3>
+        <p class="hero-sub">
+          Planning your week in advance reduces stress before exams and makes it easier to revise.
+        </p>
+        <p class="hero-sub">
+          Use the “Mark Done” button when you complete a task – you will see your progress in the dashboard and profile.
+        </p>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Create a new task</h2>
+      <form id="plannerForm">
+        <input type="text" id="subject" placeholder="Subject (e.g., Mathematics)" required>
+        <input type="text" id="topic" placeholder="Topic / Task (e.g., Derivatives – Exercise 3.2)" required>
+        <label for="date" style="font-size:0.85rem;color:#9ca3af;">Planned date (optional)</label>
+        <input type="date" id="date">
+        <button type="submit">Add Task</button>
+      </form>
+    </section>
+
+    <section class="card">
+      <h2>Your tasks</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Subject</th>
+              <th>Topic / Task</th>
+              <th>Date</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="tasksBody">
+            <!-- Filled by JS -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

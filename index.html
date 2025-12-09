@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>EDUHUB | Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav>
+    <div class="nav-inner">
+      <div class="logo">
+        <div class="logo-dot"></div>
+        EDUHUB
+        <span>Study. Share. Grow.</span>
+      </div>
+      <ul>
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="planner.html">Planner</a></li>
+        <li><a href="notes.html">Notes</a></li>
+        <li><a href="profile.html">Profile</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="page-wrap">
+    <section class="hero">
+      <div class="card card-soft">
+        <p class="hero-sub">Welcome to</p>
+        <h1 class="hero-title gradient-text">EDUHUB – Your Smart Study Partner</h1>
+        <p class="hero-sub">
+          Plan your subjects, track your progress, and share notes with friends in one simple space.
+        </p>
+        <p class="hero-sub">
+          Tip of the day: <span id="quote" style="color:#facc15;"></span>
+        </p>
+
+        <div class="btn-row">
+          <a href="planner.html" class="btn btn-primary">Open Study Planner</a>
+          <a href="notes.html" class="btn btn-outline">Browse Notes</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3 style="margin-bottom:10px;">Today at a glance</h3>
+        <div class="stats-row">
+          <div class="stat-pill">
+            <span class="stat-label">Total Tasks</span>
+            <span class="stat-value" id="totalTasks">0</span>
+          </div>
+          <div class="stat-pill">
+            <span class="stat-label">Pending Tasks</span>
+            <span class="stat-value" id="upcomingTasks">0</span>
+          </div>
+          <div class="stat-pill">
+            <span class="stat-label">Total Notes</span>
+            <span class="stat-value" id="totalNotes">0</span>
+          </div>
+        </div>
+        <p style="margin-top:12px; font-size:0.85rem; color:#9ca3af;">
+          Add tasks in the planner and notes in the notes section to see these numbers change.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>EDUHUB | Notes</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav>
+    <div class="nav-inner">
+      <div class="logo">
+        <div class="logo-dot"></div>
+        EDUHUB
+        <span>Study. Share. Grow.</span>
+      </div>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="planner.html">Planner</a></li>
+        <li><a href="notes.html" class="active">Notes</a></li>
+        <li><a href="profile.html">Profile</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="page-wrap">
+    <section class="hero">
+      <div class="card card-soft">
+        <h1 class="hero-title gradient-text">Note Sharing</h1>
+        <p class="hero-sub">
+          Create short, focused notes for each subject and keep them ready for revision.
+        </p>
+        <p class="hero-sub">
+          You can filter notes by subject and delete old notes when they are not needed.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>How to use this section</h3>
+        <p class="hero-sub">
+          Use clear titles like “DBMS – Keys summary” and write only the most important points.
+        </p>
+        <p class="hero-sub">
+          All notes are stored in your browser using localStorage, so they stay even after refresh.
+        </p>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Create note</h2>
+      <form id="noteForm">
+        <input type="text" id="noteTitle" placeholder="Note title" required>
+        <input type="text" id="noteSubject" placeholder="Subject (e.g., Physics)" required>
+        <textarea id="noteContent" placeholder="Write your note here..." required></textarea>
+        <button type="submit">Save Note</button>
+      </form>
+    </section>
+
+    <section class="card">
+      <h2>All notes</h2>
+      <label for="filterSubject" style="font-size:0.85rem;color:#9ca3af;">Filter by subject</label>
+      <select id="filterSubject">
+        <option value="all">All subjects</option>
+      </select>
+      <div class="notes-grid" id="notesContainer">
+        <!-- Notes added by JS -->
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

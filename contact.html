@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>EDUHUB | Contact</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav>
+    <div class="nav-inner">
+      <div class="logo">
+        <div class="logo-dot"></div>
+        EDUHUB
+        <span>Study. Share. Grow.</span>
+      </div>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="planner.html">Planner</a></li>
+        <li><a href="notes.html">Notes</a></li>
+        <li><a href="profile.html">Profile</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="page-wrap">
+    <section class="hero">
+      <div class="card card-soft">
+        <h1 class="hero-title gradient-text">Contact & Feedback</h1>
+        <p class="hero-sub">
+          This is a demo contact page for the EDUHUB project. You can show how a real site would collect feedback from students.
+        </p>
+        <p class="hero-sub">
+          In this project, the form does not actually send emails; it is only for front‑end demonstration.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Faculty information</h3>
+        <p class="hero-sub">
+          Internet Programming – B.Tech CSE (AI-ML), 1st Semester<br>
+          Guided by: Prof. Aniket Patel, Prof. Mayur Mistry, Mr. Bhavesh Chavda
+        </p>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Feedback form (demo)</h2>
+      <form onsubmit="event.preventDefault(); alert('This is a demo form. In a real project, this would send data to a server.');">
+        <input type="text" placeholder="Your name" required>
+        <input type="email" placeholder="Your email" required>
+        <textarea placeholder="Your message or feedback..." required></textarea>
+        <input type="submit" value="Send Feedback">
+      </form>
+      <p class="hero-sub">
+        You can mention in your report that this form is front‑end only without backend.
+      </p>
+    </section>
+
+    <footer>
+      EDUHUB – Improving Education | Created by Your Name, B.Tech CSE (AI‑ML), 1st Semester
+      <br>
+      Live URL (for submission): https://your-username.github.io/eduhub/
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
