@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>EDUHUB | Login / Profile Setup</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav>
+    <div class="nav-inner">
+      <div class="logo">
+        <div class="logo-dot"></div>
+        EDUHUB
+        <span>Study. Share. Grow.</span>
+      </div>
+
+      <div class="menu-toggle">&#9776;</div>
+
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="planner.html">Planner</a></li>
+        <li><a href="notes.html">Notes</a></li>
+        <li><a href="profile.html">Profile</a></li>
+        <li><a href="login.html" class="active">Login</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="page-wrap">
+    <section class="hero">
+      <div class="card card-soft">
+        <h1 class="hero-title gradient-text">Welcome to EDUHUB</h1>
+        <p class="hero-sub">
+          Tell us a few details so the dashboard and profile can feel more personal for you.
+        </p>
+        <p class="hero-sub">
+          You only have to fill this once. The information is stored in your browser using localStorage.
+        </p>
+      </div>
+
+      <div class="card">
+        <h2>Profile setup</h2>
+        <form id="userForm">
+          <input type="text" id="userName" placeholder="Full name" required>
+
+          <label style="font-size:0.85rem;color:#9ca3af;">You are a</label>
+          <select id="userRole" required>
+            <option value="">Select role</option>
+            <option value="Student">Student</option>
+            <option value="Teacher">Teacher</option>
+            <option value="Parent">Parent</option>
+            <option value="Other">Other</option>
+          </select>
+
+          <input type="text" id="userOrg" placeholder="School / College / Institute" required>
+          <input type="text" id="userPhone" placeholder="Phone number" required>
+          <input type="email" id="userEmail" placeholder="Email address" required>
+
+          <textarea id="userGoal" placeholder="What is your main study goal with EDUHUB? (optional)"></textarea>
+
+          <button type="submit">Save & Go to Dashboard</button>
+        </form>
+        <p class="hero-sub" style="margin-top:8px;">
+          If you already filled this earlier, your saved data will appear automatically.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
