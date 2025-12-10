@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>EDUHUB | Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -13,11 +14,15 @@
         EDUHUB
         <span>Study. Share. Grow.</span>
       </div>
-      <ul>
+
+      <div class="menu-toggle">&#9776;</div>
+
+      <ul class="nav-links">
         <li><a href="index.html" class="active">Home</a></li>
         <li><a href="planner.html">Planner</a></li>
         <li><a href="notes.html">Notes</a></li>
         <li><a href="profile.html">Profile</a></li>
+        <li><a href="login.html">Login</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </div>
@@ -26,10 +31,10 @@
   <main class="page-wrap">
     <section class="hero">
       <div class="card card-soft">
-        <p class="hero-sub">Welcome to</p>
+        <p class="hero-sub">Welcome, <span id="welcomeName" style="color:#bfdbfe;">Learner</span> 👋</p>
         <h1 class="hero-title gradient-text">EDUHUB – Your Smart Study Partner</h1>
         <p class="hero-sub">
-          Plan your subjects, track your progress, and share notes with friends in one simple space.
+          Plan your subjects, track your progress, and keep your notes in one focused workspace.
         </p>
         <p class="hero-sub">
           Tip of the day: <span id="quote" style="color:#facc15;"></span>
@@ -57,10 +62,50 @@
             <span class="stat-value" id="totalNotes">0</span>
           </div>
         </div>
-        <p style="margin-top:12px; font-size:0.85rem; color:#9ca3af;">
-          Add tasks in the planner and notes in the notes section to see these numbers change.
+        <p class="hero-sub">
+          These numbers update automatically as you add tasks in the planner and notes in the notes section.
         </p>
       </div>
+    </section>
+
+    <section class="card">
+      <h2>How EDUHUB helps you</h2>
+      <p class="hero-sub">
+        • Breaks down your subjects into small tasks so you can focus on one thing at a time.<br>
+        • Keeps track of completed work, reducing exam tension and last‑minute confusion.<br>
+        • Stores all your quick notes and important points in one place for fast revision.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>EduHub-Library</h2>
+      <p class="hero-sub">
+        EduHub-Library is an extended section of this project that collects important study materials,
+        reference documents and curated YouTube links topic-wise.
+      </p>
+      <p class="hero-sub">
+        You can explore organized playlists, solved examples and theory videos that match common
+        school and college syllabuses.
+      </p>
+      <a href="https://sites.google.com/view/eduhud123/eduhub"
+         class="btn btn-outline"
+         target="_blank"
+         rel="noopener noreferrer">
+        Open EduHub-Library
+      </a>
+    </section>
+
+    <section class="card">
+      <h2>Live project link</h2>
+      <p class="hero-sub">
+        Official live link:
+        <a href="https://dev-toido.github.io/eduhub/"
+           target="_blank"
+           rel="noopener noreferrer"
+           style="color:#60a5fa;">
+          https://dev-toido.github.io/eduhub/
+        </a>
+      </p>
     </section>
   </main>
 

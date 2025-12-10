@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>EDUHUB | Contact</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -13,11 +14,15 @@
         EDUHUB
         <span>Study. Share. Grow.</span>
       </div>
-      <ul>
+
+      <div class="menu-toggle">&#9776;</div>
+
+      <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="planner.html">Planner</a></li>
         <li><a href="notes.html">Notes</a></li>
         <li><a href="profile.html">Profile</a></li>
+        <li><a href="login.html">Login</a></li>
         <li><a href="contact.html" class="active">Contact</a></li>
       </ul>
     </div>
@@ -28,39 +33,74 @@
       <div class="card card-soft">
         <h1 class="hero-title gradient-text">Contact & Feedback</h1>
         <p class="hero-sub">
-          This is a demo contact page for the EDUHUB project. You can show how a real site would collect feedback from students.
+          This page shows how real projects collect feedback and display team information for users.
         </p>
         <p class="hero-sub">
-          In this project, the form does not actually send emails; it is only for front‑end demonstration.
+          You can mention in your report that the Google Form below is used to capture feedback.
         </p>
       </div>
 
       <div class="card">
-        <h3>Faculty information</h3>
-        <p class="hero-sub">
-          Internet Programming – B.Tech CSE (AI-ML), 1st Semester<br>
-          Guided by: Prof. Aniket Patel, Prof. Mayur Mistry, Mr. Bhavesh Chavda
-        </p>
+        <h3>Team contacts</h3>
+        <p class="hero-sub">You can reach the team on the following numbers:</p>
+        <ul style="list-style:none; padding-left:0; margin-top:8px;">
+          <li>Heet Modi – <button onclick="copyToClipboard('+919428061459')" style="background:none; border:none; color:#60a5fa; cursor:pointer; text-decoration:underline;">+91 94280 61459</button></li>
+          <li>Vivek Garai – <button onclick="copyToClipboard('+919064236638')" style="background:none; border:none; color:#60a5fa; cursor:pointer; text-decoration:underline;">+91 90642 36638</button></li>
+          <li>Kaliyani Thakur – <button onclick="copyToClipboard('+919204399260')" style="background:none; border:none; color:#60a5fa; cursor:pointer; text-decoration:underline;">+91 92043 99260</button></li>
+        </ul>
+        <script>
+          function copyToClipboard(text) {
+            navigator.clipboard.writeText(text).then(() => {
+              alert('Phone number copied!');
+            });
+          }
+        </script>
       </div>
     </section>
 
     <section class="card">
-      <h2>Feedback form (demo)</h2>
-      <form onsubmit="event.preventDefault(); alert('This is a demo form. In a real project, this would send data to a server.');">
-        <input type="text" placeholder="Your name" required>
-        <input type="email" placeholder="Your email" required>
-        <textarea placeholder="Your message or feedback..." required></textarea>
-        <input type="submit" value="Send Feedback">
-      </form>
+      <h2>Social profiles (demo)</h2>
+      <p class="hero-sub">These icons are demo links and can be connected to real profiles later.</p>
+      <div style="display:flex; flex-wrap:wrap; gap:12px; margin-top:10px;">
+        <a href="#" class="btn btn-outline">
+          <span>🐦</span> Twitter
+        </a>
+        <a href="#" class="btn btn-outline">
+          <span>📘</span> Facebook
+        </a>
+        <a href="#" class="btn btn-outline">
+          <span>📸</span> Instagram
+        </a>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Feedback form</h2>
       <p class="hero-sub">
-        You can mention in your report that this form is front‑end only without backend.
+        Please share your feedback about EDUHUB using the form below.
       </p>
+
+      <!-- Replace src with your real Google Forms embed URL -->
+      <iframe src="https://forms.gle/2jZqL5MuZgSe7CPZA"
+              width="100%"
+              height="600"
+              frameborder="0"
+              marginheight="0"
+              marginwidth="0">
+        Loading…
+      </iframe>
     </section>
 
     <footer>
-      EDUHUB – Improving Education | Created by Your Name, B.Tech CSE (AI‑ML), 1st Semester
+      EDUHUB – Improving Education | Team: Heet Modi, Vivek Garai, Kaliyani Thakur
       <br>
-      Live URL (for submission): https://your-username.github.io/eduhub/
+      Live URL:
+      <a href="https://dev-toido.github.io/eduhub/"
+         target="_blank"
+         rel="noopener noreferrer"
+         style="color:#60a5fa;">
+        https://dev-toido.github.io/eduhub/
+      </a>
     </footer>
   </main>
 

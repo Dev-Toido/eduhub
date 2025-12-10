@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>EDUHUB | Study Planner</title>
+  <title>EDUHUB | Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -13,11 +14,15 @@
         EDUHUB
         <span>Study. Share. Grow.</span>
       </div>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="planner.html" class="active">Planner</a></li>
+
+      <div class="menu-toggle">&#9776;</div>
+
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="planner.html">Planner</a></li>
         <li><a href="notes.html">Notes</a></li>
         <li><a href="profile.html">Profile</a></li>
+        <li><a href="login.html">Login</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </div>
@@ -26,55 +31,81 @@
   <main class="page-wrap">
     <section class="hero">
       <div class="card card-soft">
-        <h1 class="hero-title gradient-text">Study Planner</h1>
+        <p class="hero-sub">Welcome, <span id="welcomeName" style="color:#bfdbfe;">Learner</span> 👋</p>
+        <h1 class="hero-title gradient-text">EDUHUB – Your Smart Study Partner</h1>
         <p class="hero-sub">
-          Organize your subjects and topics, set a date, and track what is done or pending.
+          Plan your subjects, track your progress, and keep your notes in one focused workspace.
         </p>
         <p class="hero-sub">
-          Pro tip: keep tasks small, like “Read 5 pages of Chapter 2” instead of “Finish Chapter 2”.
+          Tip of the day: <span id="quote" style="color:#facc15;"></span>
         </p>
+
+        <div class="btn-row">
+          <a href="planner.html" class="btn btn-primary">Open Study Planner</a>
+          <a href="notes.html" class="btn btn-outline">Browse Notes</a>
+        </div>
       </div>
 
       <div class="card">
-        <h3>Why planning helps?</h3>
+        <h3 style="margin-bottom:10px;">Today at a glance</h3>
+        <div class="stats-row">
+          <div class="stat-pill">
+            <span class="stat-label">Total Tasks</span>
+            <span class="stat-value" id="totalTasks">0</span>
+          </div>
+          <div class="stat-pill">
+            <span class="stat-label">Pending Tasks</span>
+            <span class="stat-value" id="upcomingTasks">0</span>
+          </div>
+          <div class="stat-pill">
+            <span class="stat-label">Total Notes</span>
+            <span class="stat-value" id="totalNotes">0</span>
+          </div>
+        </div>
         <p class="hero-sub">
-          Planning your week in advance reduces stress before exams and makes it easier to revise.
-        </p>
-        <p class="hero-sub">
-          Use the “Mark Done” button when you complete a task – you will see your progress in the dashboard and profile.
+          These numbers update automatically as you add tasks in the planner and notes in the notes section.
         </p>
       </div>
     </section>
 
     <section class="card">
-      <h2>Create a new task</h2>
-      <form id="plannerForm">
-        <input type="text" id="subject" placeholder="Subject (e.g., Mathematics)" required>
-        <input type="text" id="topic" placeholder="Topic / Task (e.g., Derivatives – Exercise 3.2)" required>
-        <label for="date" style="font-size:0.85rem;color:#9ca3af;">Planned date (optional)</label>
-        <input type="date" id="date">
-        <button type="submit">Add Task</button>
-      </form>
+      <h2>How EDUHUB helps you</h2>
+      <p class="hero-sub">
+        • Breaks down your subjects into small tasks so you can focus on one thing at a time.<br>
+        • Keeps track of completed work, reducing exam tension and last‑minute confusion.<br>
+        • Stores all your quick notes and important points in one place for fast revision.
+      </p>
     </section>
 
     <section class="card">
-      <h2>Your tasks</h2>
-      <div class="table-wrap">
-        <table>
-          <thead>
-            <tr>
-              <th>Subject</th>
-              <th>Topic / Task</th>
-              <th>Date</th>
-              <th>Status</th>
-              <th>Actions</th>
-            </tr>
-          </thead>
-          <tbody id="tasksBody">
-            <!-- Filled by JS -->
-          </tbody>
-        </table>
-      </div>
+      <h2>EduHub-Library</h2>
+      <p class="hero-sub">
+        EduHub-Library is an extended section of this project that collects important study materials,
+        reference documents and curated YouTube links topic-wise.
+      </p>
+      <p class="hero-sub">
+        You can explore organized playlists, solved examples and theory videos that match common
+        school and college syllabuses.
+      </p>
+      <a href="https://sites.google.com/view/eduhud123/eduhub"
+         class="btn btn-outline"
+         target="_blank"
+         rel="noopener noreferrer">
+        Open EduHub-Library
+      </a>
+    </section>
+
+    <section class="card">
+      <h2>Live project link</h2>
+      <p class="hero-sub">
+        Official live link:
+        <a href="https://dev-toido.github.io/eduhub/"
+           target="_blank"
+           rel="noopener noreferrer"
+           style="color:#60a5fa;">
+          https://dev-toido.github.io/eduhub/
+        </a>
+      </p>
     </section>
   </main>
 

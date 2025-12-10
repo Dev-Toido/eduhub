@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>EDUHUB | Profile</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -13,11 +14,15 @@
         EDUHUB
         <span>Study. Share. Grow.</span>
       </div>
-      <ul>
+
+      <div class="menu-toggle">&#9776;</div>
+
+      <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="planner.html">Planner</a></li>
         <li><a href="notes.html">Notes</a></li>
         <li><a href="profile.html" class="active">Profile</a></li>
+        <li><a href="login.html">Login</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </div>
@@ -26,17 +31,17 @@
   <main class="page-wrap">
     <section class="profile-grid">
       <div class="card card-soft">
-        <h1 class="hero-title gradient-text">Student Profile</h1>
+        <h1 class="hero-title gradient-text">Your Profile</h1>
         <p class="hero-sub">
-          This section summarizes your activity inside EDUHUB.
+          This section shows basic information you entered on the login/setup page.
         </p>
 
         <div style="margin-top:10px;">
-          <p><strong>Name:</strong> Your Name</p>
-          <p><strong>Enrollment No:</strong> 123456789</p>
-          <p><strong>Course:</strong> B.Tech CSE (AI-ML)</p>
-          <p><strong>Semester:</strong> 1st</p>
-          <p><strong>Institute:</strong> Ganpat University, U.V. Patel College of Engineering</p>
+          <p><strong>Name:</strong> <span id="profileName">Learner</span></p>
+          <p><strong>Role:</strong> <span id="profileRole">—</span></p>
+          <p><strong>Institute:</strong> <span id="profileOrg">—</span></p>
+          <p><strong>Phone:</strong> <span id="profilePhone">—</span></p>
+          <p><strong>Email:</strong> <span id="profileEmail">—</span></p>
         </div>
       </div>
 
@@ -57,9 +62,21 @@
           </li>
         </ul>
         <p class="hero-sub">
-          These numbers are calculated from your planner and notes data stored in localStorage.
+          These numbers are calculated from your tasks and notes stored in localStorage.
         </p>
       </div>
+    </section>
+
+    <section class="card" style="margin-top:20px;">
+      <h2>Project team</h2>
+      <ul style="margin-top:10px; list-style:none; padding-left:0;">
+        <li>Heet Modi</li>
+        <li>Vivek Garai</li>
+        <li>Kaliyani Thakur</li>
+      </ul>
+      <p class="hero-sub">
+        EDUHUB is a collaborative project built to make self‑study and peer learning more organized.
+      </p>
     </section>
   </main>
 

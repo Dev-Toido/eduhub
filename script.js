@@ -12,6 +12,48 @@ function setData(key, value) {
   localStorage.setItem(key, JSON.stringify(value));
 }
 
+// ===== USER PROFILE (login + used on other pages) =====
+function initUserForm() {
+  const form = document.getElementById("userForm");
+  if (!form) return;
+
+  const stored = getData("eduhub_user", null);
+  if (stored) {
+    document.getElementById("userName").value = stored.name || "";
+    document.getElementById("userRole").value = stored.role || "";
+    document.getElementById("userOrg").value = stored.org || "";
+    document.getElementById("userPhone").value = stored.phone || "";
+    document.getElementById("userEmail").value = stored.email || "";
+    document.getElementById("userGoal").value = stored.goal || "";
+  }
+
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const profile = {
+      name: document.getElementById("userName").value.trim(),
+      role: document.getElementById("userRole").value,
+      org: document.getElementById("userOrg").value.trim(),
+      phone: document.getElementById("userPhone").value.trim(),
+      email: document.getElementById("userEmail").value.trim(),
+      goal: document.getElementById("userGoal").value.trim()
+    };
+
+    if (!profile.name || !profile.role || !profile.org || !profile.phone || !profile.email) {
+      alert("Please fill all required fields.");
+      return;
+    }
+
+    setData("eduhub_user", profile);
+    alert("Profile saved successfully!");
+    window.location.href = "index.html";
+  });
+}
+
+function getUserNameOrDefault() {
+  const u = getData("eduhub_user", null);
+  return u && u.name ? u.name : "Learner";
+}
+
 // ===== Quotes / tips for dashboard =====
 const tips = [
   "Block 25-minute focus sessions and reward yourself with 5-minute breaks.",
@@ -26,15 +68,16 @@ function initDashboard() {
   const tTasks = document.getElementById("totalTasks");
   const uTasks = document.getElementById("upcomingTasks");
   const tNotes = document.getElementById("totalNotes");
+  const welcomeName = document.getElementById("welcomeName");
 
-  if (!quoteEl && !tTasks) return;
+  if (!quoteEl && !tTasks && !welcomeName) return;
 
   const dayIndex = new Date().getDate() % tips.length;
   if (quoteEl) quoteEl.textContent = tips[dayIndex];
+  if (welcomeName) welcomeName.textContent = getUserNameOrDefault();
 
   const tasks = getData("eduhub_tasks", []);
   const notes = getData("eduhub_notes", []);
-
   const pendingCount = tasks.filter(t => t.status === "pending").length;
 
   if (tTasks) tTasks.textContent = tasks.length;
@@ -254,21 +297,50 @@ function initProfile() {
   const sEl = document.getElementById("profileTotalSubjects");
   const nEl = document.getElementById("profileTotalNotes");
   const cEl = document.getElementById("profileCompletedTasks");
-  if (!sEl || !nEl || !cEl) return;
+
+  const nameEl = document.getElementById("profileName");
+  const roleEl = document.getElementById("profileRole");
+  const orgEl = document.getElementById("profileOrg");
+  const phoneEl = document.getElementById("profilePhone");
+  const emailEl = document.getElementById("profileEmail");
 
   const tasks = getData("eduhub_tasks", []);
   const notes = getData("eduhub_notes", []);
+  const user = getData("eduhub_user", null);
 
-  const uniqueSubjects = Array.from(new Set(tasks.map(t => t.subject)));
-  const completed = tasks.filter(t => t.status === "done").length;
+  if (sEl && nEl && cEl) {
+    const uniqueSubjects = Array.from(new Set(tasks.map(t => t.subject)));
+    const completed = tasks.filter(t => t.status === "done").length;
 
-  sEl.textContent = uniqueSubjects.length;
-  nEl.textContent = notes.length;
-  cEl.textContent = completed;
+    sEl.textContent = uniqueSubjects.length;
+    nEl.textContent = notes.length;
+    cEl.textContent = completed;
+  }
+
+  if (user && nameEl && roleEl && orgEl && phoneEl && emailEl) {
+    nameEl.textContent = user.name || "Learner";
+    roleEl.textContent = user.role || "—";
+    orgEl.textContent = user.org || "—";
+    phoneEl.textContent = user.phone || "—";
+    emailEl.textContent = user.email || "—";
+  }
+}
+
+// ===== Mobile nav toggle =====
+function initMobileNav() {
+  const toggle = document.querySelector(".menu-toggle");
+  const links = document.querySelector(".nav-links");
+  if (!toggle || !links) return;
+
+  toggle.addEventListener("click", () => {
+    links.classList.toggle("show");
+  });
 }
 
 // ===== Init per page =====
 document.addEventListener("DOMContentLoaded", () => {
+  initMobileNav();
+  initUserForm();
   initDashboard();
   initPlanner();
   initNotes();
