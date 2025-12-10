@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>EDUHUB | Notes</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -13,11 +14,15 @@
         EDUHUB
         <span>Study. Share. Grow.</span>
       </div>
-      <ul>
+
+      <div class="menu-toggle">&#9776;</div>
+
+      <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="planner.html">Planner</a></li>
         <li><a href="notes.html" class="active">Notes</a></li>
         <li><a href="profile.html">Profile</a></li>
+        <li><a href="login.html">Login</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </div>
@@ -28,20 +33,23 @@
       <div class="card card-soft">
         <h1 class="hero-title gradient-text">Note Sharing</h1>
         <p class="hero-sub">
-          Create short, focused notes for each subject and keep them ready for revision.
+          Create short, focused notes for each subject and keep them ready for quick revision.
         </p>
         <p class="hero-sub">
-          You can filter notes by subject and delete old notes when they are not needed.
+          You can filter notes by subject and delete older notes when they are not needed anymore.
         </p>
       </div>
 
       <div class="card">
-        <h3>How to use this section</h3>
+        <h3>Examples of notes</h3>
         <p class="hero-sub">
-          Use clear titles like “DBMS – Keys summary” and write only the most important points.
+          • “Physics – Kinematics formulas summary”<br>
+          • “Programming – Important array methods in JavaScript”<br>
+          • “Maths – Trigonometry identities overview”
         </p>
         <p class="hero-sub">
-          All notes are stored in your browser using localStorage, so they stay even after refresh.
+          All notes are stored locally in your browser using localStorage, so they remain available
+          even when you refresh the page.
         </p>
       </div>
     </section>
